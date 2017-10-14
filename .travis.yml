@@ -15,5 +15,5 @@ deploy:
     repo: thedch/travis-ci-latex-pdf
     branches:
       only:
-      - master
-      - develop
+        - master
+        - develop
