@@ -1,16 +1,16 @@
 sudo: required
 dist: trusty
 before_install:
-- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended
+  texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
 script:
 - mkdir _build
 - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build tex/resume.tex
 deploy:
   provider: releases
   api_key:
-    secure: [YOUR KEY]
-  file:
-  - _build/resume.pdf
+    secure: F1Rmp3TFUUQtvui3LWLi1MtWJaoyHhaR9E2e8BBD/0rURRzuL4k+dtCy9X1RQd/5kOSaWYjhP0ULszYPzAJBPbEUxkpP+MciKhexzmfAmuRPd+M9KMVhRJudOa80w/oYBIYnjZ19PlTTS16F3TQRB/E7WpeSXZK20n6ZTrJ1yDtBlRPw9uQC020QvjVpdbUJDFsBTtEXo9MW2IQK5rUrX0MZb/Llqz6dpxxv/Sdce4OqflBoyUg784Y20Sk/JcoEpVgaWG1u4OUVYDG7oGEoDRWV9vsJCcG4tFaDHAA2eisKOkrbF1kJ7Hp5720/Sm47VhRzMv3GMww4bT1GDv2w8AVXzfF1kPrxBj1d2tnm9U+sEeOpg3n4DbWDoKUpgu9VGGb629fLZIq6i4kGh3krFBMkoi0S5Qd3CZObHCB95YO8FvDmitei9IyJ3L8Fc8xMVfBfygqITCIR9mZBtwEtPWAKUGVLdicTd4U66JGG9RB4davFpmhVBJ2nZ0yGOXs9JF82qqagXE+2lbVfKGfk+A/6YGIe3TcnbUn0Ic5G8cL0WJvon1/G7sJfGeNWtsKymCrivYnTXorSDsMBmBZCKjcXSL4qt5Lzsjufmj2WG9akTdlHzXHTUqY54qyRjG0tCDdF8OhfylSuLD0FdtYrrrVAreebWNf+wQ6HA9+ygSM=
+  file: _build/resume.pdf
   skip_cleanup: true
   on:
-    tags: true
+    repo: thedch/travis-ci-latex-pdf
