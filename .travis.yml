@@ -12,6 +12,7 @@ deploy:
   file: _build/resume.pdf
   skip_cleanup: true
   on:
+    tags: true
     repo: thedch/travis-ci-latex-pdf
     branches:
       only:
