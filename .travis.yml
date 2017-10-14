@@ -13,3 +13,7 @@ deploy:
   skip_cleanup: true
   on:
     repo: thedch/travis-ci-latex-pdf
+    branches:
+      only:
+      - master
+      - develop
